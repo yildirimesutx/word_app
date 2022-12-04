@@ -124,3 +124,21 @@ def user_login(request):
 
 
 
+# pythonanywhere
+
+# +++++++++++ DJANGO +++++++++++
+# To use your own django app use code like this:
+import os
+import sys
+
+# assuming your django settings file is at '/home/kale11/mysite/mysite/settings.py'
+# and your manage.py is is at '/home/kale11/mysite/manage.py'
+path = '/home/kale11/word_app'  => source kod
+if path not in sys.path:
+   sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'main.settings'  => proje ismi
+
+## then:
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
