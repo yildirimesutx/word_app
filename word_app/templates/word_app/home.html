@@ -1,0 +1,57 @@
+{% extends 'word_app/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="m-2">
+    <div class="row">
+        
+        <div class="col-md-6">
+            <h1 class="d-2 text-center m-5">Word App</h1>
+            <form class="d-grid gap-4 mb-5 shadow p-5">
+                <input class="form-control mt-3" type="text" name="name" placeholder="Word name">
+                <input class="btn btn-success mb-3" type="submit" value="ADD">
+            </form>
+
+
+            <div  class="w-75">
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger w-50">{{ message }}</div>
+                {% else %}
+                <div class="alert w-50 alert-{{ message.tags }}">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="col-md-6 h-25" >
+            <img class="img-fluid" src="https://images.unsplash.com/photo-1533226458520-6f71cffeaa6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80" alt="">
+       </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+
+ <nav class="navbar navbar-expand-lg bg-warning p-2 text-white bg-opacity-50">
+    <div class="container-fluid">
+     
+   <a class="navbar-brand" href="{% url 'home' %}"><code>Word App</code></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><code>Home</code> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}"> <code>About</code></a>
+          </li>
+
+          
+        </ul>
+        {% if request.user.is_authenticated %}
+          <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'list' %}"><code>My Words</code></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}"><code>Profile</code> </a>
+          </li>
+
+           
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}"><code>Logout</code> </a>
+          </li>
+        </ul>
+       </ul>
+    {% else %}
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}"><code>Register</code></a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'user_login' %}"><code>Login</code> </a>
+          </li>
+        </ul> 
+        
+      {% endif %} 
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,37 @@
+{% extends 'word_app/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="container">
+        <div class="row">
+            <div class="m-5 card-group flex-wrap" style="width:100%">
+                        {% for word in word_data %}
+
+                        <div class="card" style="min-width: 250px;max-width:250px;min-height:250px;max-height:250px;margin:1rem;background-color:bisque">
+           
+                            <div class="card-body">
+                                  <h3> {{ word.word }}</h3>
+                                  <h6> {{ word.definition }}</h6>
+                                  <div class="card-text position-relative">
+                                 <a href="{% url 'delete' word.word.id %}" class="btn btn-danger">Del</a>
+                                </div>
+                           </div>
+                        </div>
+                        {% endfor %} 
+             </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+       
+{% endblock content %}

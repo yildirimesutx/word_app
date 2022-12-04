@@ -1,0 +1,38 @@
+{% extends 'users/base.html' %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+{% if request.user.is_authenticated %}
+
+<h3>Thanks for registering</h3>
+
+{% else %}
+
+
+<h3 class='uc'>Fill out the form please!</h3>
+<form class="register_form" action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} 
+    {{ form | crispy }}
+    <button id="register_btn" type="submit" class="btn btn-danger">Register</button>
+</form>
+{% endif %} 
+
+{% endblock content %}  
+
+
+
+
+
+{% comment %} <h1>Register Page</h1>
+
+
+
+<form action="" method="POST">
+ 
+   {% csrf_token %}
+   {{form.as_p}}
+   <input type="submit" value='register'>
+
+</form>  {% endcomment %}
