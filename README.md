@@ -1,3 +1,6 @@
+NOT : WordsApi şu an pasif olduğu için kelime sorgusu yapılamamaktadır
+
+
 ### USER REGISTER
 <hr>
 
